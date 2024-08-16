@@ -1,17 +1,43 @@
-type Query {
-    record(id:ID!): Record
-    records: [Record]
+  type Transaction {
+    id: ID!
+    userId: ID!
+    descrption: String!
+    paymentType: String!
+    category: String!
+    amount: Float!
+    date: String!
   }
-  
+
+  type Query {
+    transactions: [Transaction!]
+    transaction(transactionId:ID!): Transaction
+    category: [Category!]
+  }
+
   type Mutation {
-    createRecord(name: String!, position: String, level: String): Record
-    deleteRecord(id: ID!): Boolean
-    updateRecord(id: ID! name: String, position: String, level: String): Record
+    create(input: CreateTransactionInput!): Transaction!
+    update(input: UpdateTransactionInput!): Transaction!
+    delete(transactionId:ID!): Transaction!
   }
-  
-  type Record {
-    id: ID
-    name: String
-    position: String
-    level: String
+
+  type Category {
+    category: String!
+    totalAmount: Float!
+  }
+
+  input CreateTransactionInput {
+    descrption: String!
+    paymentType: String!
+    category: String!
+    amount: Float!
+    date: String!
+  }
+
+  input UpdateTransactionInput {
+    transactionId: ID!
+    descrption: String
+    paymentType: String
+    category: String
+    amount: Float
+    date: String
   }

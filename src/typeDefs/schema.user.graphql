@@ -4,30 +4,24 @@
     name: String!
     email: String!
     password: String!
-    image: String        
-  } 
-
-  type Query {
-    users: [User!]
-    auth: User
-    user(userId:ID!): User      
+    image: String
+    transactions: [Transaction!]
   }
 
   type Mutation {
-    signup(input: SignupInput!): User
+    signUp(input: SignUpInput!): User
     login(input: LoginInput!): User
     logout: Boolean
   }
-  
-  input SignupInput {
-    name: String!
+
+  input SignUpInput {
     email: String!
     password: String!
-    image: String
   }
 
   input LoginInput {
-    email: String!
+    username: String!
     password: String!
   }
-  
+
+

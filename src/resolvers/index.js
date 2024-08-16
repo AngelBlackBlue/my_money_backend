@@ -1,4 +1,4 @@
-import { mergeSchemas } from '@graphql-tools/schema'
+import { mergeSchemas } from '@graphql-tools/merge'
 import resolverUser from './resolver.user'
 import resolverTransaction from './resolver.transaction'
 
