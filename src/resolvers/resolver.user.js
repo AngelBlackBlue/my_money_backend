@@ -1,6 +1,6 @@
 
 
-const resolversUser = {
+const resolverUser = {
     query: {
         users:() => {
             return users
@@ -9,4 +9,4 @@ const resolversUser = {
   
 };
 
-export default resolversUser;
+export default resolverUser;

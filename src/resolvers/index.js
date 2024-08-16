@@ -1,12 +1,9 @@
 import { mergeSchemas } from '@graphql-tools/schema'
-import resolversUser from './resolvers.user'
-import transactionUser from './transaction.user'
+import resolverUser from './resolver.user'
+import resolverTransaction from './resolver.transaction'
 
-const mergeResolvers = mergeSchemas(
-    [
-        resolversUser,
-        transactionUser
-    ]
+const mergeResolvers = mergeSchemas( 
+    [ resolverUser, resolverTransaction ]
 )
 
 export default mergeResolvers
