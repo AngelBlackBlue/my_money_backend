@@ -1,11 +1,11 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
-
+import mergeResolvers from './resolvers/index';
 
 
 const server = new ApolloServer({
     typeDefs,
-    resolvers,
+    resolvers: mergeResolvers,
   });
   
 
@@ -14,3 +14,5 @@ const server = new ApolloServer({
   });
   
   console.log(`🚀  Server ready at: ${url}`);
+
+  

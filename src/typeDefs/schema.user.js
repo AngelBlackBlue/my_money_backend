@@ -31,8 +31,5 @@ const typeDefs = `#graphql
     email: String!
     password: String!
   }
-
   
-  
-
 `;
